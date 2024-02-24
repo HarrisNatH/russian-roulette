@@ -15,6 +15,7 @@ public class Ascii {
         System.out.println("| | |_ | / /\\ \\ | |\\/| |  __|    | |  | |\\ \\/ / |  __| |  _  / ");
         System.out.println("| |__| |/ ____ \\| |  | | |____   | |__| | \\  /  | |____| | \\ \\ ");
         System.out.println(" \\_____/_/    \\_\\_|  |_|______|   \\____/   \\/   |______|_|  \\_\\");
+        System.out.println("\n\n");
     }
 }
 

@@ -15,7 +15,7 @@ public class GameStart {
         while (true) {
             System.out.println((playerTurn ? "\nPLAYER'S" : "\nAI'S") + " TURN.\n");
             if (takeTurn()) {
-                System.out.println((playerTurn ? "\nPlayer" : "\nAI") + " loses!\n");
+                System.out.println((playerTurn ? "\nPlayer" : "\nAI") + " loses!");
                 Ascii.gameOver();
                 break;
             }
@@ -25,21 +25,21 @@ public class GameStart {
 
     private static void setupGame() {
         int chambersCount = 0;
-        while (chambersCount != 6 && chambersCount != 12) {
-            System.out.println("Choose chambers (6 or 12):");
+        while (chambersCount != 6 && chambersCount != 9 && chambersCount != 12) {
+            System.out.println("Choose chambers (6 / 9 / 12):");
             while (!scanner.hasNextInt()) { // Check if input is an integer
-                System.out.println("Invalid input. Please enter a number (6 or 12):");
+                System.out.println("Invalid input. Please enter a number (6 / 9 / 12):");
                 scanner.next(); // Consume the invalid input
             }
             chambersCount = scanner.nextInt();
-            if (chambersCount != 6 && chambersCount != 12) {
-                System.out.println("Invalid choice. Please choose from 6 or 12.");
+            if (chambersCount != 6 && chambersCount != 9 && chambersCount != 12) {
+                System.out.println("Invalid choice. Please choose from 6 / 9 / 12.");
             }
         }
         
-        int bulletsCount = chambersCount / 6; // 1 bullet for 6, 2 for 12 chambers
+        int bullet = 1;
         chambers = new ArrayList<>(Collections.nCopies(chambersCount, false));
-        for (int i = 0; i < bulletsCount; i++) {
+        for (int i = 0; i < bullet; i++) {
             chambers.set(i, true);
         }
         Collections.shuffle(chambers); // Mix the chambers
@@ -61,6 +61,7 @@ public class GameStart {
            // Check if the player has reached the maximum number of shots
             if (shotCounter >= 3) {
                 System.out.println("Turn automatically ends after 3 shots.");
+                Line.separator();
                 break; // Exit the loop and end the turn
             }
 
@@ -68,6 +69,7 @@ public class GameStart {
                 System.out.println("You can [shoot] again or [end] turn? (Remaining shots: " + (3 - shotCounter) + ")");
                 String choice = scanner.next();
                 if ("end".equalsIgnoreCase(choice)) {
+                    Line.separator();
                     break; // Player chooses to end turn
                 }
 
@@ -77,6 +79,7 @@ public class GameStart {
                     // Continue the loop to take another shot
                 } else {
                     System.out.println("AI decides to end turn.");
+                    Line.separator();
                     break; // Exit the loop and end the AI's turn
                 };
             }
@@ -112,5 +115,9 @@ public class GameStart {
         } else {
             return false; // High risk, decide to end turn
         }
+    }
+
+    public static void resetShotsFired(){
+        totalShotsFired = 0;
     }
 }

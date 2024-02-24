@@ -10,6 +10,7 @@ public class Main {
 
                 switch(pick){
                     case 1:
+                        GameStart.resetShotsFired();
                         GameStart.start();
                         break;
                     case 2:
