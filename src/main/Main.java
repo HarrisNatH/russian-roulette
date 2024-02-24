@@ -3,7 +3,8 @@ public class Main {
         boolean finished = false;
         while(!finished){
             try{
-                Title.printTitleIntro();
+                // Title.printTitleIntro();
+                Ascii.gameTitle();
                 System.out.println("Main menu: \n   1. Start game\n   2. Exit\n");
                 int pick = Integer.parseInt(System.console().readLine());
 

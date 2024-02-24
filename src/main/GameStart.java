@@ -16,6 +16,7 @@ public class GameStart {
             System.out.println((playerTurn ? "\nPLAYER'S" : "\nAI'S") + " TURN.\n");
             if (takeTurn()) {
                 System.out.println((playerTurn ? "\nPlayer" : "\nAI") + " loses!\n");
+                Ascii.gameOver();
                 break;
             }
             playerTurn = !playerTurn; // Switch turns
@@ -90,6 +91,7 @@ public class GameStart {
             System.out.println((playerTurn ? "\nPlayer" : "\nAI") + " fired a real bullet!");
             return true; // Bullet fired
         }
+
         System.out.println("BANG! it was a blank shot.");
         System.out.println("Total shots so far: " + totalShotsFired + "\n");
         return false; // No bullet fired
