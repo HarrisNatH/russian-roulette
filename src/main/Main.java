@@ -4,12 +4,12 @@ public class Main {
         while(!finished){
             try{
                 System.out.println("Welcome to Russian Roullete Prototype");
-                System.out.println("Main menu: \n   1. Start game\n   2. Exit\n*please input a number*");
+                System.out.println("Main menu: \n   1. Start game\n   2. Exit\n");
                 int pick = Integer.parseInt(System.console().readLine());
 
                 switch(pick){
                     case 1:
-                        //main program
+                        GameStart.start();
                         break;
                     case 2:
                         System.out.println("Thank you for participating");
