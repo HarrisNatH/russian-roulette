@@ -46,7 +46,10 @@ public class GameStart {
 
     private static boolean takeTurn() {
         System.out.println("Gripped the gun, points at self's head, pulled the trigger (SHOOT)");
-
+        if(playerTurn == true){
+            Delay.waiting();
+        }
+        
         int shotCounter = 0;
         while (shotCounter < 3){
             if (shoot()) {
