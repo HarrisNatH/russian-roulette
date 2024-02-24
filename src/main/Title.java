@@ -1,6 +1,6 @@
 public class Title {
     public static void printTitleIntro() {
-        String title = "RUSSIAN Roulette";
+        String title = "RUSSIAN ROULETTE";
         int titleLength = title.length();
 
         int frameWidth = titleLength + 6;

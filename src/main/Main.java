@@ -3,7 +3,7 @@ public class Main {
         boolean finished = false;
         while(!finished){
             try{
-                System.out.println("Welcome to Russian Roullete Prototype");
+                Title.printTitleIntro();
                 System.out.println("Main menu: \n   1. Start game\n   2. Exit\n");
                 int pick = Integer.parseInt(System.console().readLine());
 
